@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="jumbotron">
+        <form>
+            <div class="form-group row">
+                <label for="name" class="col-sm-2 col-form-label">Name:</label>
+
+                <div class="col-sm-3">
+                    <input id="name" class="form-control" type="text" ng-model="basic.name">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Gender:</label>
+                <div class="col-sm-3">
+                    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" ng-model="basic.sex">
+                        <!--<option selected>Choose...</option>-->
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>other</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Nationality:</label>
+                <div class="col-sm-3">
+                    <input name="nationality" class="form-control" type="text" ng-model="basic.nationality">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label"> Married:</label>
+                <div class="col-auto">
+                    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" ng-model="basic.married">
+                        <!--<option selected>Choose...</option>-->
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <!--<button class="btn btn-primary" ng-click="partialSubmit()">Next</button>-->
+                <button class="btn btn-outline-success" ng-click="partialSubmit()">Next</button>
+
+            </div>
+        </form>
+    </div>
+</div>
