@@ -1,7 +1,7 @@
 'use strict';
 
 var BasicInfoCtrl = function ($scope, $http, $location, dataService) {
-    console.log("from Info controller ");
+    // console.log("from Info controller ");
     $scope.sportsList = [
         {name: 'Golf'},
         {name:'Tennis'},
@@ -17,21 +17,14 @@ var BasicInfoCtrl = function ($scope, $http, $location, dataService) {
     };
     $scope.basic = dataService.getBasic();
     $scope.partialSubmit = function () {
-        console.log("test");
-        console.log($scope.basic);
-        $http.get("http://localhost:3000/hello")
-            .then(function (response) {
-               console.log(response);
-            });
-
-        // console.log(dataService);
-        dataService.setBasic($scope.basic);
-        $location.path('/about', false);
-        // $http.post("http://localhost:3000/basicInfo", $scope.basic)
+        // console.log("test");
+        // console.log($scope.basic);
+        // $http.get("http://localhost:3000/hello")
         //     .then(function (response) {
         //        console.log(response);
-        //         $location.path('/about', false)
         //     });
+        dataService.setBasic($scope.basic);
+        $location.path('/about', false);
     }
 };
 

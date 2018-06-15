@@ -1,6 +1,6 @@
 
 (function () {
-    console.log("service")
+    // console.log("service")
 var dataService = function($http) {
     var mydata = {};
 
@@ -29,6 +29,16 @@ var dataService = function($http) {
     var getSocial = function () {
         return mydata.social;
     };
+    var submitReq = function () {
+      // $http.post()
+      return  $http.post("http://localhost:3000/saveInfo", mydata)
+            .then(function (response) {
+               return response.data;
+            });
+    };
+    var getUserList = function () {
+
+    };
     return{
         setBasic: setBasic,
         getBasic: getBasic,
@@ -36,10 +46,11 @@ var dataService = function($http) {
         setAbout: setAbout,
         getAbout: getAbout,
         setSocial: setSocial,
-        getSocial: getSocial
+        getSocial: getSocial,
+        submitReq: submitReq,
+        getUsers : getUserList
     };
 };
-    console.log(dataService);
 var module = angular.module('myApp');
 module.factory('dataService', dataService);
 

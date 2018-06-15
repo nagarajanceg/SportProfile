@@ -1,4 +1,7 @@
 <div class="container">
+    <div class="alert alert-secondary" role="alert" id="alertContainer" ng-show="status">
+        This is a secondary alert—check it out!
+    </div>
     <div class="jumbotron " style="background-color: #F5F2F0">
         <div class="row">
             <div class="col">
@@ -134,7 +137,11 @@
                 <span>{{social.youtube}}</span>
             </div>
         </div>
-
     </div>
-
+    <hr>
+    <div class="row">
+        <div class="col-md-auto">
+            <button class="btn btn-primary" ng-click="submitAction()">submit</button>
+        </div>
+    </div>
 </div>

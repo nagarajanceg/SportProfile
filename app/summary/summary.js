@@ -1,28 +1,46 @@
 'use strict';
 
-var SummaryCtrl = function ($scope, $http, $location, dataService) {
-    console.log("Summary");
-    console.log(dataService.getData());
+var SummaryCtrl = function ($scope, $http, $location, $anchorScroll, $timeout, dataService) {
+
+    $scope.status = false;
+
     var dataAvailable = dataService.getData();
+
     $scope.basic = dataAvailable.basic;
     $scope.about = dataAvailable.about;
     $scope.social = dataAvailable.social;
+
+    var unsetStatus = function () {
+        $scope.status = false;
+    };
+
     $scope.editInfo = function () {
         console.log("edit info")
         $location.path('/info', false);
     };
-    $scope.editAbout= function () {
-      $location.path('/about', false);
+
+    $scope.editAbout = function () {
+        $location.path('/about', false);
     };
-    $scope.editSocial= function () {
+
+    $scope.editSocial = function () {
         $location.path('/social', false);
     };
-    $scope.partialSubmit = function () {
+
+    $scope.submitAction = function () {
+        console.log("submitAction");
+        dataService.submitReq().then(function (data) {
+            console.log("onsucess response");
+            $scope.status = true;
+            $location.hash('alertContainer');
+            $anchorScroll();
+            $timeout(unsetStatus, 5000);
+            console.log(data);
+        });
         console.log(dataService.getData());
-        // dataService.setSocial($scope.social);
         // $location.path('/summary', false);
     };
-} ;
+};
 angular.module('myApp.summary', ['ngRoute'])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/summary', {
@@ -30,4 +48,4 @@ angular.module('myApp.summary', ['ngRoute'])
             controller: 'SummaryCtrl'
         });
     }])
-    .controller('SummaryCtrl', ['$scope','$http', '$location','dataService', SummaryCtrl]);
+    .controller('SummaryCtrl', ['$scope', '$http', '$location', '$anchorScroll', '$timeout', 'dataService', SummaryCtrl]);
