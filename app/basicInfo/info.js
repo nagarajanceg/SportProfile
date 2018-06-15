@@ -15,6 +15,7 @@ var BasicInfoCtrl = function ($scope, $http, $location, dataService) {
     $scope.getSelectedItems = function(item){
         return item.selected;
     };
+    $scope.basic = dataService.getBasic();
     $scope.partialSubmit = function () {
         console.log("test");
         console.log($scope.basic);

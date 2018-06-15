@@ -2,8 +2,139 @@
     <div class="jumbotron " style="background-color: #F5F2F0">
         <div class="row">
             <div class="col">
-
+                <h3><span>Basic Info</span></h3>
+            </div>
+            <div class="col">
+                <button class="btn btn-primary" ng-click="editInfo()"> edit</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <span> Name:</span>
+            </div>
+            <div class="col-md-10 text-left">
+                <span class=".px-2" >{{basic.name}}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <span class=".px-2"> Sports:</span>
+            </div>
+            <div class="col-md-10 text-left">
+                <span ng-repeat="name in basic.sport">{{name}},</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <span> Gender:</span>
+            </div>
+            <div class="col-md-10 text-left">
+                <span >{{basic.gender}}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <span> Nationality:</span>
+            </div>
+            <div class="col-md-10 text-left">
+                <span>{{basic.nationality}}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <span> Married:</span>
+            </div>
+            <div class="col-md-10 text-left">
+                <span>{{basic.married}}</span>
             </div>
         </div>
     </div>
+    <hr>
+    <div class="jumbotron " style="background-color: #F5F2F0">
+        <div class="row">
+            <div class="col">
+                <h3><span>About</span></h3>
+            </div>
+            <div class="col">
+                <button class="btn btn-primary" ng-click="editAbout()">edit</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <span> Description:</span>
+            </div>
+            <div class="col-md-10 text-left">
+                <textarea rows="8" disabled>{{about.desc}}</textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <span> Location:</span>
+            </div>
+            <div class="col-md-10 text-left">
+                <span>{{about.location}}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <span> Team:</span>
+            </div>
+            <div class="col-md-10 text-left">
+                <span>{{about.team}}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <span> Association:</span>
+            </div>
+            <div class="col-md-10 text-left">
+                <span>{{about.association}}</span>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="jumbotron " style="background-color: #F5F2F0">
+        <div class="row">
+            <div class="col">
+                <h3><span>Social</span></h3>
+            </div>
+            <div class="col">
+                <button class="btn btn-primary" ng-click="editSocial()">edit</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <span> Facebook:</span>
+            </div>
+            <div class="col-md-10 text-left">
+                <span>{{social.fb}}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <span> Twitter:</span>
+            </div>
+            <div class="col-md-10 text-left">
+                <span>{{social.twitter}}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <span> Instagram:</span>
+            </div>
+            <div class="col-md-10 text-left">
+                <span>{{social.insta}}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <span> Youtube:</span>
+            </div>
+            <div class="col-md-10 text-left">
+                <span>{{social.youtube}}</span>
+            </div>
+        </div>
+
+    </div>
+
 </div>

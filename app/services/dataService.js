@@ -6,9 +6,10 @@ var dataService = function($http) {
 
     var setBasic = function (data) {
         mydata.basic = data;
-        console.log("setDaaaaaaaataa",data);
     };
-
+    var getBasic = function () {
+        return mydata.basic;
+    }
     var getData = function () {
         return mydata;
     };
@@ -16,18 +17,30 @@ var dataService = function($http) {
     var setAbout = function (data) {
       mydata.about = data;
     };
+
+    var getAbout = function () {
+        return mydata.about;
+    };
+
     var setSocial = function (data) {
       mydata.social = data;
     };
+
+    var getSocial = function () {
+        return mydata.social;
+    };
     return{
         setBasic: setBasic,
+        getBasic: getBasic,
         getData: getData,
         setAbout: setAbout,
-        setSocial: setSocial
+        getAbout: getAbout,
+        setSocial: setSocial,
+        getSocial: getSocial
     };
 };
     console.log(dataService);
 var module = angular.module('myApp');
 module.factory('dataService', dataService);
 
-}())
+}());

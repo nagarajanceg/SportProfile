@@ -1,6 +1,7 @@
 'use strict';
 
 var AboutCtrl = function ($scope, $http, $location, dataService) {
+    $scope.about = dataService.getAbout();
     $scope.partialSubmit = function () {
         console.log($scope.about);
         dataService.setAbout($scope.about);
