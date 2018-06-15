@@ -30,7 +30,6 @@ var SummaryCtrl = function ($scope, $http, $location, $anchorScroll, $timeout, d
     $scope.submitAction = function () {
         console.log("submitAction");
         dataService.submitReq().then(function (data) {
-            console.log("onsucess response");
             $scope.status = true;
             $location.hash('alertContainer');
             $anchorScroll();
