@@ -1,10 +1,11 @@
 'use strict';
 
-var AboutCtrl = function ($scope, $http) {
+var AboutCtrl = function ($scope, $http, $location, dataService) {
     $scope.partialSubmit = function () {
         console.log($scope.about);
+        dataService.setAbout($scope.about);
+        $location.path('/social', false);
     };
-
 } ;
 angular.module('myApp.about', ['ngRoute'])
 .config(['$routeProvider', function ($routeProvider) {
@@ -12,5 +13,6 @@ angular.module('myApp.about', ['ngRoute'])
         templateUrl: 'about/about.html',
         controller: 'AboutCtrl'
     });
+
 }])
-.controller('AboutCtrl', ['$scope','$http',AboutCtrl]);
+.controller('AboutCtrl', ['$scope','$http', '$location','dataService',AboutCtrl]);

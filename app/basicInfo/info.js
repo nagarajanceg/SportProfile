@@ -1,6 +1,6 @@
 'use strict';
 
-var BasicInfoCtrl = function ($scope, $http, $location) {
+var BasicInfoCtrl = function ($scope, $http, $location, dataService) {
     console.log("from Info controller ");
     $scope.sportsList = [
         {name: 'Golf'},
@@ -22,18 +22,16 @@ var BasicInfoCtrl = function ($scope, $http, $location) {
             .then(function (response) {
                console.log(response);
             });
-        $http.get("https://api.github.com/users/nagarajanceg")
-            .then(function (response) {
-                console.log(response);
-                // console.log(response.content);
-            });
-        $http.post("http://localhost:3000/basicInfo", $scope.basic)
-            .then(function (response) {
-               console.log(response);
-                $location.path('/about', false)
-            });
-    }
 
+        // console.log(dataService);
+        dataService.setBasic($scope.basic);
+        $location.path('/about', false);
+        // $http.post("http://localhost:3000/basicInfo", $scope.basic)
+        //     .then(function (response) {
+        //        console.log(response);
+        //         $location.path('/about', false)
+        //     });
+    }
 };
 
 angular.module('myApp.info', ['ngRoute'])
@@ -45,4 +43,4 @@ angular.module('myApp.info', ['ngRoute'])
         });
     }])
 
-    .controller('InfoCtrl', ['$scope', '$http', '$location', BasicInfoCtrl]);
+    .controller('InfoCtrl', ['$scope', '$http', '$location', 'dataService', BasicInfoCtrl]);
