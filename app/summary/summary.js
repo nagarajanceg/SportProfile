@@ -15,7 +15,7 @@ var SummaryCtrl = function ($scope, $http, $location, $anchorScroll, $timeout, d
     };
 
     $scope.editInfo = function () {
-        console.log("edit info")
+        console.log("edit info");
         $location.path('/info', false);
     };
 

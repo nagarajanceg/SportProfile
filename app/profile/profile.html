@@ -1,7 +1,18 @@
-<div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
-    <div class="card-header">Header</div>
+<div ng-repeat="user in users"  style="margin: 1%">
+<div class="  card text-white bg-secondary text-white " style="max-width: 40rem;" >
+    <div class="card-header">{{user.basic.name}}  <span class="text-right">{{user.about.team}}</span></div>
     <div class="card-body">
-        <h4 class="card-title">Dark card title</h4>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <h4 class="card-title">  {{user.about.association}}</h4>
+        <p class="card-text">{{user.about.desc}}</p>
+        <span class="card-text">{{user.basic.gender}}</span>
+        <span class="card-text"> {{user.about.location}}</span>
+        <div ng-show=user.social>
+        <a href="{{user.social.fb}}" >fb</a>
+        <a href="{{user.social.twitter}}">tw</a>
+        <a href="{{user.social.insta}}" >insta</a>
+        </div>
     </div>
+    <br>
+    <br>
+</div>
 </div>
