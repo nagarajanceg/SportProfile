@@ -37,7 +37,10 @@ var dataService = function($http) {
             });
     };
     var getUserList = function () {
-
+        return $http.get("http://localhost:3000/getUsers")
+            .then(function (response) {
+                return response;
+            })
     };
     return{
         setBasic: setBasic,

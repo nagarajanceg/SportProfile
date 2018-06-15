@@ -2,6 +2,9 @@
 
 var ProfileCtrl = function ($scope, $http, $location, dataService) {
     console.log("Hello profile")
+    dataService.getUsers().then(function (data) {
+      console.log(data);
+    });
 } ;
 angular.module('myApp.profile', ['ngRoute'])
     .config(['$routeProvider', function ($routeProvider) {
